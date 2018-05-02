@@ -22,20 +22,7 @@
         <script>
             function get_TAMS_01_Vitals(){
                 //this function gets the T.A.M.S 01 (Teddys Arduino Micro Satelite 01 prototype)
-                var request = new XMLHttpRequest();
 
-                request.open('GET', 'http://blynk-cloud.com/081f84563ac145d38b999e47736cbece/get/V5');
-
-                request.onreadystatechange = function () {
-                if (this.readyState === 4) {
-                    
-                    var solar_array_voltage = htis.responseText;
-                    document.getElementById("TAMS_TEMP").textContent=solar_array_voltage;
-
-                        }
-                    };
-
-                    request.send();
             }
         </script>
     </head>
