@@ -1,0 +1,13 @@
+<?php
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "https://private-anon-197a5c0541-blynkapi.apiary-proxy.com/auth_token/get/pin");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+var_dump($response);
+
+?>
