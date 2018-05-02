@@ -9,5 +9,5 @@ $response = curl_exec($ch);
 curl_close($ch);
 
 var_dump($response);
-
+echo "T.A.M.S 01 Prototype Solar Array Voltage : " + $response;
 ?>
