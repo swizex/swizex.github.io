@@ -18,6 +18,28 @@
                     evt.currentTarget.className += " active";
                 }
                 </script>
+
+        <script>
+            function get_TAMS_01_Vitals(){
+                //this function gets the T.A.M.S 01 (Teddys Arduino Micro Satelite 01 prototype)
+                var request = new XMLHttpRequest();
+
+                request.open('GET', 'http://blynk-cloud.com/081f84563ac145d38b999e47736cbece/get/V5');
+
+                request.onreadystatechange = function () {
+                if (this.readyState === 4) {
+                console.log('Status:', this.status);
+                console.log('Headers:', this.getAllResponseHeaders());
+                console.log('Body:', this.responseText);
+                        }
+                    };
+
+                    request.send();
+
+                    var solar_array_voltage = htis.responseText;
+                    document.body.innerHTML = document.body.innerHTML.replace('TAMS_TEMP', solar_array_voltage);
+            }
+        </script>
     </head>
 
     <body onload="opentab(event, 'home')">
@@ -33,6 +55,12 @@
                             <div class="siimple-tabs-tab">Tutorials</div>
                             <div class="siimple-tabs-tab" onclick="opentab(event, 'results')">Surveys and test results</div>
                             <div class="siimple-tabs-tab" onclick="opentab(event, 'about')">About</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event, 'TAMS')">T.A.M.S 01 Project</div>
+                          </div>
+
+                          <div id="TAMS" class="tabcontent">
+                                <div class="siimple-btn siimple-btn--navy" onclick="get_TAMS_01_Vitals()">Get Vitals of T.A.M.S 01 Prototype</div>
+                                <div class="siimple-h3">TAMS_TEMP</div>
                           </div>
 
                           <div id="about" class="tabcontent">
