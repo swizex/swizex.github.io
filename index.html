@@ -28,16 +28,14 @@
 
                 request.onreadystatechange = function () {
                 if (this.readyState === 4) {
-                console.log('Status:', this.status);
-                console.log('Headers:', this.getAllResponseHeaders());
-                console.log('Body:', this.responseText);
+                    
+                    var solar_array_voltage = htis.responseText;
+                    document.getElementById("TAMS_TEMP").textContent=solar_array_voltage;
+
                         }
                     };
 
                     request.send();
-
-                    var solar_array_voltage = htis.responseText;
-                    document.getElementById("TAMS_TEMP").textContent=solar_array_voltage;
             }
         </script>
     </head>
