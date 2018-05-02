@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="dist/siimple.css">
 
         <script>
-                function openCity(evt, cityName) {
+                function opentab(evt, tabName) {
                     var i, tabcontent, tablinks;
                     tabcontent = document.getElementsByClassName("tabcontent");
                     for (i = 0; i < tabcontent.length; i++) {
@@ -14,24 +14,24 @@
                     for (i = 0; i < tablinks.length; i++) {
                         tablinks[i].className = tablinks[i].className.replace(" active", "");
                     }
-                    document.getElementById(cityName).style.display = "block";
+                    document.getElementById(tabName).style.display = "block";
                     evt.currentTarget.className += " active";
                 }
                 </script>
     </head>
 
-    <body onload="openCity(event, 'home')">
+    <body onload="opentab(event, 'home')">
             <div class="siimple-content" align="center">
                     <div class="siimple-tabs">
-                            <div class="siimple-tabs-tab" onclick="openCity(event, 'home')">Home</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event, 'patreon')">Patreon</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event,'photography')">Photography</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event, 'contact')">Contact / Where to find me</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event,'donate')">Donate</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event,'favorite')">Favorite Quotes</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event, 'education')">Educational Material</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event, 'home')">Home</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event, 'patreon')">Patreon</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event,'photography')">Photography</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event, 'contact')">Contact / Where to find me</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event,'donate')">Donate</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event,'favorite')">Favorite Quotes</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event, 'education')">Educational Material</div>
                             <div class="siimple-tabs-tab">Tutorials</div>
-                            <div class="siimple-tabs-tab" onclick="openCity(event, 'results')">Surveys and test results</div>
+                            <div class="siimple-tabs-tab" onclick="opentab(event, 'results')">Surveys and test results</div>
                           </div>
 
                           <div id="home" class="tabcontent">
